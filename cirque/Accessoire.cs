@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-namespace cirque
+namespace Moncirque
 {
     public class Accessoire
     {
@@ -18,24 +18,14 @@ namespace cirque
             this.Ratelier = ratelier;
             this.Camion = camion;
         }
-        public override string ToString()
+        public Accessoire() { }
+        public string getNom()
         {
-            return ($"{Nom} {Couleur} Volume {Volume} Camion {Camion}");
-        }
-
-    }
-    public class Personnel
-    {
-        private string Nom_personnel;
-        private string Role_personnel;
-        public Personnel(string nom, string role)
-        {
-            Nom_personnel = nom;
-            Role_personnel = role;
+            return Nom;
         }
         public override string ToString()
         {
-            return ($"{Nom_personnel}-{Role_personnel}");
+            return ($"{Nom} ({Couleur}) Volume {Volume} Camion {Camion}");
         }
 
     }
