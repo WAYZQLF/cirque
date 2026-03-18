@@ -47,9 +47,9 @@
             txtNom_Personnel = new TextBox();
             Nom_Personnel = new Label();
             groupBoxUtilisation = new GroupBox();
+            cmbAccessoire = new ComboBox();
+            cmbPersonnnel = new ComboBox();
             btnValiderU = new Button();
-            txtPersonnel = new TextBox();
-            txtAccessoire = new TextBox();
             Personnel = new Label();
             Accessoire = new Label();
             groupBoxAccessoire.SuspendLayout();
@@ -225,9 +225,9 @@
             // 
             // groupBoxUtilisation
             // 
+            groupBoxUtilisation.Controls.Add(cmbAccessoire);
+            groupBoxUtilisation.Controls.Add(cmbPersonnnel);
             groupBoxUtilisation.Controls.Add(btnValiderU);
-            groupBoxUtilisation.Controls.Add(txtPersonnel);
-            groupBoxUtilisation.Controls.Add(txtAccessoire);
             groupBoxUtilisation.Controls.Add(Personnel);
             groupBoxUtilisation.Controls.Add(Accessoire);
             groupBoxUtilisation.Location = new Point(525, 213);
@@ -236,6 +236,22 @@
             groupBoxUtilisation.TabIndex = 2;
             groupBoxUtilisation.TabStop = false;
             groupBoxUtilisation.Text = "Utilisation";
+            // 
+            // cmbAccessoire
+            // 
+            cmbAccessoire.FormattingEnabled = true;
+            cmbAccessoire.Location = new Point(91, 30);
+            cmbAccessoire.Name = "cmbAccessoire";
+            cmbAccessoire.Size = new Size(121, 23);
+            cmbAccessoire.TabIndex = 6;
+            // 
+            // cmbPersonnnel
+            // 
+            cmbPersonnnel.FormattingEnabled = true;
+            cmbPersonnnel.Location = new Point(91, 69);
+            cmbPersonnnel.Name = "cmbPersonnnel";
+            cmbPersonnnel.Size = new Size(121, 23);
+            cmbPersonnnel.TabIndex = 5;
             // 
             // btnValiderU
             // 
@@ -246,20 +262,6 @@
             btnValiderU.Text = "Valider";
             btnValiderU.UseVisualStyleBackColor = true;
             btnValiderU.Click += btnValiderU_Click;
-            // 
-            // txtPersonnel
-            // 
-            txtPersonnel.Location = new Point(101, 64);
-            txtPersonnel.Name = "txtPersonnel";
-            txtPersonnel.Size = new Size(100, 23);
-            txtPersonnel.TabIndex = 3;
-            // 
-            // txtAccessoire
-            // 
-            txtAccessoire.Location = new Point(101, 22);
-            txtAccessoire.Name = "txtAccessoire";
-            txtAccessoire.Size = new Size(100, 23);
-            txtAccessoire.TabIndex = 2;
             // 
             // Personnel
             // 
@@ -320,9 +322,9 @@
         private Label Rôle_Personnel;
         private GroupBox groupBoxUtilisation;
         private Button btnValiderU;
-        private TextBox txtPersonnel;
-        private TextBox txtAccessoire;
         private Label Personnel;
         private Label Accessoire;
+        private ComboBox cmbAccessoire;
+        private ComboBox cmbPersonnnel;
     }
 }

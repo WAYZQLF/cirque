@@ -3,25 +3,25 @@ namespace frmcirque
 {
     public partial class FrmMenu : Form
     {
-        Accessoire[] tabAccessoire = new Accessoire[3];
-        Personnel[] tabPersonnel = new Personnel[3];
-        Utilisation[] tabUtilisation = new Utilisation[3];
-        int i = 0;
-        int j = 0;
-        int k = 0;
+        List<Accessoire> listAccessoire;
+        List<Personnel> listPersonnel;
+        List<Utilisation> listUtilisation;
+
         public FrmMenu()
         {
             InitializeComponent();
+            listAccessoire = new List<Accessoire>();
+            listPersonnel = new List<Personnel>();
+            listUtilisation = new List<Utilisation>();
         }
 
         private void btnValiderA_Click(object sender, EventArgs e)
         {
-            tabAccessoire[i] = new Accessoire(txtNom.Text, txtCouleur.Text, Convert.ToDouble(txtVolume.Text), Convert.ToInt32(txtRatelier.Text), Convert.ToInt32(txtCamion.Text));
-            i++;
-            if (i == 3)
+            listAccessoire.Add(new Accessoire(txtNom.Text, txtCouleur.Text, Convert.ToDouble(txtVolume.Text), Convert.ToInt32(txtRatelier.Text), Convert.ToInt32(txtCamion.Text)));
+            cmbAccessoire.Items.Clear();
+            foreach (Accessoire accessoire in listAccessoire)
             {
-                MessageBox.Show("Limite atteinte");
-                btnValiderA.Enabled = false;
+                cmbAccessoire.Items.Add(accessoire.getNom());
             }
             txtNom.Clear();
             txtCouleur.Clear();
@@ -32,13 +32,12 @@ namespace frmcirque
 
         private void btnvaliderP_Click(object sender, EventArgs e)
         {
-            tabPersonnel[j] = new Personnel(txtNom_Personnel.Text, txtRôle_Personnel.Text);
-            j++;
-            if (j == 3)
+            listPersonnel.Add(new Personnel(txtNom_Personnel.Text, txtRôle_Personnel.Text));
+            cmbPersonnnel.Items.Clear();
+            foreach(Personnel personnel in listPersonnel)
             {
-                MessageBox.Show("Limite atteinte");
-                btnvaliderP.Enabled = false;
-            }
+                cmbPersonnnel.Items.Add(personnel.getNomP());
+            }   
             txtNom_Personnel.Clear();
             txtRôle_Personnel.Clear();
 
@@ -47,31 +46,28 @@ namespace frmcirque
         private void btnValiderU_Click(object sender, EventArgs e)
         {
             Accessoire a = new Accessoire();
-            foreach (Accessoire acces in tabAccessoire)
+            string accessoire=cmbAccessoire.SelectedItem.ToString();
+            foreach (Accessoire acces in listAccessoire)
             {
-                if (acces.getNom() == txtAccessoire.Text)
+                if (acces.getNom() == accessoire)
                 {
-                    a=acces;
+                    a = acces;
                 }
             }
             Personnel p = new Personnel();
-            foreach(Personnel personnel in tabPersonnel)
+            string personnel=cmbPersonnnel.SelectedItem.ToString();
+            foreach (Personnel perso in listPersonnel)
             {
-                if(personnel.getNomP() == txtPersonnel.Text)
+                if (perso.getNomP() == personnel)
                 {
-                    p=personnel;
+                    p = perso;
                 }
             }
-            tabUtilisation[k] = new Utilisation(a, p);
-            k++;
-            if (k == 3)
-            {
-                MessageBox.Show("Limite atteinte");
-                btnValiderU.Enabled = false;
-            }
-            txtAccessoire.Clear();
-            txtPersonnel.Clear();
+            listUtilisation.Add(new Utilisation(p, a));
 
+            // Désélectionner sans vider la liste
+            cmbAccessoire.SelectedIndex = -1;
+            cmbPersonnnel.SelectedIndex = -1;
         }
     }
 }
