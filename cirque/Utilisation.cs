@@ -11,6 +11,12 @@ namespace Moncirque
  
         private Personnel personnel;
         private Accessoire accessoire;
+        public List<string> UtilisationsAccessoires = new List<string>();
+        public Personnel Responsable
+        {
+            get { return personnel; }
+            set { personnel = value; }
+        }
         public Utilisation(Personnel P, Accessoire A) 
         {
             this.personnel = P;

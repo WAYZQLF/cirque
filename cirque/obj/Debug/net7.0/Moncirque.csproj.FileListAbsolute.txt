@@ -1,0 +1,12 @@
+M:\dev app\C#\cirque\cirque\bin\Debug\net7.0\Moncirque.deps.json
+M:\dev app\C#\cirque\cirque\bin\Debug\net7.0\Moncirque.dll
+M:\dev app\C#\cirque\cirque\bin\Debug\net7.0\Moncirque.pdb
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.csproj.AssemblyReference.cache
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.GeneratedMSBuildEditorConfig.editorconfig
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.AssemblyInfoInputs.cache
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.AssemblyInfo.cs
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.csproj.CoreCompileInputs.cache
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.dll
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\refint\Moncirque.dll
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\Moncirque.pdb
+M:\dev app\C#\cirque\cirque\obj\Debug\net7.0\ref\Moncirque.dll
